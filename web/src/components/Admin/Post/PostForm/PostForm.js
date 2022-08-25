@@ -18,7 +18,7 @@ import rehypeSanitize from "rehype-sanitize";
 
 const PostForm = (props) => {
   const onSubmit = (data) => {
-    data.body = value;
+    data.body = value
     props.onSave(data, props?.post?.id)
   }
 

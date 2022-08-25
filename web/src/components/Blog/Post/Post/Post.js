@@ -1,9 +1,8 @@
 import MarkdownIt from 'markdown-it'
-import truncate from 'html-truncate'
 import { format } from 'date-fns'
-import { Link, routes } from '@redwoodjs/router'
 
 import avatar from 'src/assets/img/avatar.jpg'
+import MDEditor from '@uiw/react-md-editor'
 
 const md = new MarkdownIt()
 
@@ -11,13 +10,6 @@ const formatDate = (date) => {
   return format(new Date(date), 'MMM dd')
 }
 
-const formatBody = (post, summary) => {
-  let output = md.render(post.body)
-  if (summary) {
-    return truncate(output, 500)
-  }
-  return output
-}
 
 const Post = ({ post, summary = false }) => {
   return (
@@ -43,11 +35,8 @@ const Post = ({ post, summary = false }) => {
             </span>
           </h1>
         </header>
-        <div className="mt-2">
-          <div
-            className="markdown"
-            dangerouslySetInnerHTML={{ __html: formatBody(post, summary) }}
-          ></div>
+        <div className="mt-2" data-color-mode="light">
+          <MDEditor.Markdown source={post.body} style={{ whiteSpace: 'pre-wrap' }} />
         </div>
         {/* <footer className="flex items-center mt-4 text-xs text-gray-600">
           {post.category.name && (

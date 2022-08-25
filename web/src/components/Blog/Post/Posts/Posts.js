@@ -1,7 +1,9 @@
-import MarkdownIt from 'markdown-it'
 import truncate from 'html-truncate'
+import MarkdownIt from 'markdown-it'
+
 import { format } from 'date-fns'
 import { Link, routes } from '@redwoodjs/router'
+
 
 const md = new MarkdownIt()
 
@@ -20,7 +22,7 @@ const jsonDisplay = (obj) => {
 const formatBody = (post, summary) => {
   let output = md.render(post.body)
   if (summary) {
-    return truncate(output, 500)
+    return truncate(output, 24)
   }
   return output
 }
