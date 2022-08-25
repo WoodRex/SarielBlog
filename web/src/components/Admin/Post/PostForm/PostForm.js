@@ -10,13 +10,21 @@ import {
   Submit,
 } from '@redwoodjs/forms'
 import { NavLink, routes } from '@redwoodjs/router'
+import { useState } from 'react'
+
+import MDEditor from '@uiw/react-md-editor'
+import rehypeSanitize from "rehype-sanitize";
+
 
 const PostForm = (props) => {
   const onSubmit = (data) => {
+    data.body = value;
     props.onSave(data, props?.post?.id)
   }
 
-  const { userMetadata } = useAuth()
+  // const { userMetadata } = useAuth()
+
+  const [value, setValue] = useState(`${(props.post?.body ?? '' )}`);
 
   return (
     <div className="rw-form-wrapper">
@@ -90,13 +98,24 @@ const PostForm = (props) => {
           Body
         </Label>
 
-        <TextAreaField
+        <div data-color-mode="light">
+          <MDEditor
+            value={value}
+            onChange={setValue}
+            height={300}
+            previewOptions={{
+              rehypePlugins: [[rehypeSanitize]],
+            }}
+          />
+        </div>
+
+        {/* <TextAreaField
           name="body"
           defaultValue={props.post?.body}
           className="mt-2 block h-80 w-full rounded border p-2 text-base text-gray-900 focus:border-indigo-300 focus:outline-none"
           errorClassName="block mt-2 w-full p-2 border border-red-500 text-base text-red-700 rounded focus:outline-none focus:border-red-700 h-80"
           validation={{ required: true }}
-        />
+        /> */}
 
         <FieldError name="body" className="rw-field-error" />
 
