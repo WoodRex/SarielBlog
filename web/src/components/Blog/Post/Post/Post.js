@@ -1,10 +1,8 @@
-import MarkdownIt from 'markdown-it'
 import { format } from 'date-fns'
 
 import avatar from 'src/assets/img/avatar.jpg'
 import MDEditor from '@uiw/react-md-editor'
 
-const md = new MarkdownIt()
 
 const formatDate = (date) => {
   return format(new Date(date), 'MMM dd')

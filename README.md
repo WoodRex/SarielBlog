@@ -26,11 +26,12 @@ The admin backend includes:
 * User authentication
 * Create a new blog post with:
     * Title
+    * Author
     * Body
     * Category
 * Edit existing blog post
 * Delete a blog post
-* Richtext editor (Not yet Finish)
+* Richtext editor
 * Publish a post live
 
 On the tech side:
@@ -38,6 +39,7 @@ On the tech side:
 * Data stored in a SQL database (SQLite locally)
 * User authentication using dbAuth
 * CSS styling via [TailwindCSS](https://tailwindcss.com)
+* Using both MarkdownIt and MDEditor in different view
 
 ### Installation
 
