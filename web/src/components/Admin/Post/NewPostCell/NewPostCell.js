@@ -4,6 +4,15 @@ import { toast } from '@redwoodjs/web/toast'
 
 import PostForm from 'src/components/Admin/Post/PostForm'
 
+export const QUERY = gql`
+  query CategoriesQuery {
+    categories: allCategories {
+      id
+      name
+    }
+  }
+`
+
 const CREATE_POST_MUTATION = gql`
   mutation CreatePostMutation($input: CreatePostInput!) {
     createPost(input: $input) {
@@ -12,7 +21,13 @@ const CREATE_POST_MUTATION = gql`
   }
 `
 
-const NewPost = () => {
+export const Loading = () => <div>Loading...</div>
+
+export const Failure = ({ error }) => (
+  <div className="rw-cell-error">{error.message}</div>
+)
+
+export const Success = ({ categories }) => {
   const [createPost, { loading, error }] = useMutation(CREATE_POST_MUTATION, {
     onCompleted: () => {
       toast.success('Post created')
@@ -36,10 +51,9 @@ const NewPost = () => {
         <h2 className="rw-heading rw-heading-secondary">New Post</h2>
       </header>
       <div className="rw-segment-main">
-        <PostForm onSave={onSave} loading={loading} error={error} />
+        <PostForm categories={categories} onSave={onSave} loading={loading} error={error} />
       </div>
     </div>
   )
 }
 
-export default NewPost

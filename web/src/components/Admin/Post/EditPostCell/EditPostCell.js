@@ -15,6 +15,10 @@ export const QUERY = gql`
       categoryId
       createdAt
     }
+    categories: allCategories {
+      id
+      name
+    }
   }
 `
 const UPDATE_POST_MUTATION = gql`
@@ -36,7 +40,7 @@ export const Failure = ({ error }) => (
   <div className="rw-cell-error">{error.message}</div>
 )
 
-export const Success = ({ post }) => {
+export const Success = ({ post, categories }) => {
   const [updatePost, { loading, error }] = useMutation(UPDATE_POST_MUTATION, {
     onCompleted: () => {
       toast.success('Post updated')
@@ -60,7 +64,7 @@ export const Success = ({ post }) => {
         <h2 className="rw-heading rw-heading-secondary">Edit Post </h2>
       </header>
       <div className="rw-segment-main">
-        <PostForm post={post} onSave={onSave} error={error} loading={loading} />
+        <PostForm categories={categories} post={post} onSave={onSave} error={error} loading={loading} />
       </div>
     </div>
   )

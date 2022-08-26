@@ -5,8 +5,9 @@ import {
   FieldError,
   Label,
   TextField,
-  NumberField,
+  SelectField,
   TextAreaField,
+  RadioField,
   Submit,
 } from '@redwoodjs/forms'
 import { NavLink, routes } from '@redwoodjs/router'
@@ -77,16 +78,16 @@ const PostForm = (props) => {
           className="rw-label"
           errorClassName="rw-label rw-label-error"
         >
-          Category id
+          Category
         </Label>
 
-        <NumberField
-          name="categoryId"
-          defaultValue={props.post?.categoryId}
-          className="rw-input"
-          errorClassName="rw-input rw-input-error"
-          validation={{ required: true }}
-        />
+        <SelectField name="categoryId" defaultValue={props.post?.categoryId}>
+          {props.categories?.map((cat) =>
+              <option value={cat.id}>
+                {cat.name}
+              </option>
+            )}
+        </SelectField>
 
         <FieldError name="categoryId" className="rw-field-error" />
 

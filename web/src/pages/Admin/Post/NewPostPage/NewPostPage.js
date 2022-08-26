@@ -1,7 +1,7 @@
-import NewPost from 'src/components/Admin/Post/NewPost'
+import NewPostCell from 'src/components/Admin/Post/NewPostCell'
 
 const NewPostPage = () => {
-  return <NewPost />
+  return <NewPostCell />
 }
 
 export default NewPostPage
