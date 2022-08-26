@@ -33,6 +33,7 @@ const Routes = () => {
         <Route path="/page/{page:Int}" page={BlogPostsPage} name="page" />
         <Route path="/category/{id:Int}" page={BlogCategoriedPostsPage} name="category" />
         <Route path="/post/{id:Int}" page={BlogPostPage} name="post" />
+        <Route path="/search/{term:String}" page={BlogSearchPage} name="search" />
       </Set>
         <Route path="/admin/login" page={BlogLoginPage} name="login" />
         <Route path="/signup" page={BlogSignupPage} name="signup" />

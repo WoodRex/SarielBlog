@@ -1,7 +1,7 @@
 import avatar from 'src/assets/img/avatar.jpg'
 import RecentPostsCell from 'src/components/Blog/Post/RecentPostsCell/RecentPostsCell'
 import CategoriesCell from 'src/components/Blog/Category/CategoriesCell/CategoriesCell'
-
+import SearchBar from 'src/components/Blog/Search/SearchBar/SearchBar'
 
 
 const Nav = () => {
@@ -9,7 +9,7 @@ const Nav = () => {
     <aside className="ml-4 hidden w-1/4 h-80s rounded-b bg-white p-8 shadow sm:block">
 
       <div className="text-left">
-        {/* <SearchBar /> */}
+        <SearchBar />
         <img
             className="inline-block w-24 rounded-full"
             alt="User Avatar"

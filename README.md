@@ -17,7 +17,7 @@ It includes:
 
 * Listing all blog posts and pagination (homepage)
 * Reading a single, full blog post
-* Searching for blog posts by keyword (Not yet Finish)
+* Searching for blog posts by keyword
 * Displaying all posts with a given category
 * Responsive viewport
 

@@ -66,6 +66,17 @@ export const allPost = ({ id }) => {
   })
 }
 
+export const searchPosts = ({ term }) => {
+  logger.debug({ term }, 'In searchPosts')
+
+  return db.post.findMany({
+    where: {
+      OR: [{ title: { contains: term } }, { body: { contains: term } }],
+    },
+    include: { category: true }
+  })
+}
+
 export const createPost = ({ input }) => {
   return db.post.create({
     data: input,

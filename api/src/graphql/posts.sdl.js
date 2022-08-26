@@ -21,6 +21,7 @@ export const schema = gql`
     recentPosts(page: Int, limit: Int): PostsSet @skipAuth
     allPosts(page: Int, limit: Int): PostsSet @skipAuth
     findPostsByCategoryId(id: Int!): [Post] @skipAuth
+    searchPosts(term: String): [Post] @skipAuth
   }
 
   input CreatePostInput {
