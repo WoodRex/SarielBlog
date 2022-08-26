@@ -22,7 +22,7 @@ const PostForm = (props) => {
     props.onSave(data, props?.post?.id)
   }
 
-  // const { userMetadata } = useAuth()
+  const { currentUser } = useAuth()
 
   const [value, setValue] = useState(`${(props.post?.body ?? '' )}`);
 
@@ -64,7 +64,7 @@ const PostForm = (props) => {
 
         <TextField
           name="author"
-          defaultValue={( props.post?.author ? props.post?.author : "WoodRex83" )}
+          defaultValue={( props.post?.author ? props.post?.author : currentUser.email )}
           className="rw-input"
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
