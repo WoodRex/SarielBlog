@@ -6,7 +6,7 @@ export const beforeQuery = ({ id }) => ({
 
 export const QUERY = gql`
   query FindPostQuery($id: Int!) {
-    post(id: $id) {
+    post: allPost(id: $id) {
       id
       title
       body

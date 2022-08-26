@@ -60,6 +60,12 @@ export const post = ({ id }) => {
   })
 }
 
+export const allPost = ({ id }) => {
+  return db.post.findUnique({
+    where: { id },
+  })
+}
+
 export const createPost = ({ input }) => {
   return db.post.create({
     data: input,

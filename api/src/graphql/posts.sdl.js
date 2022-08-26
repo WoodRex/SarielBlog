@@ -17,6 +17,7 @@ export const schema = gql`
   type Query {
     posts: [Post!]! @requireAuth
     post(id: Int!): Post @requireAuth
+    allPost(id: Int!): Post @skipAuth
     recentPosts(page: Int, limit: Int): PostsSet @skipAuth
     allPosts(page: Int, limit: Int): PostsSet @skipAuth
     findPostsByCategoryId(id: Int!): [Post] @skipAuth
