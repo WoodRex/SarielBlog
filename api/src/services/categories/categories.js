@@ -5,7 +5,7 @@ export const categories = () => {
 }
 
 export const allCategories = () => {
-  return db.categort.findMany()
+  return db.category.findMany()
 }
 
 export const category = ({ id }) => {

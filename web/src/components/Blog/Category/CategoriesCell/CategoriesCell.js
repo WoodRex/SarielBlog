@@ -2,7 +2,7 @@ import Category from "src/components/Blog/Category/Category/Category"
 
 export const QUERY = gql`
   query CategoriesQuery {
-    categories {
+    categories: allCategories {
       id
       name
     }
