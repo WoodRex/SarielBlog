@@ -1,7 +1,7 @@
 import avatar from 'src/assets/img/avatar.jpg'
-import RecentPostsCell from 'src/components/Blog/Post/RecentPostsCell/RecentPostsCell'
-import CategoriesCell from 'src/components/Blog/Category/CategoriesCell/CategoriesCell'
-import SearchBar from 'src/components/Blog/Search/SearchBar/SearchBar'
+import RecentPostsCell from 'src/components/Blog/Cell/RecentPostsCell/RecentPostsCell'
+import CategoriesCell from 'src/components/Blog/Cell/CategoriesCell/CategoriesCell'
+import SearchBar from 'src/components/Blog/SearchBar/SearchBar'
 
 
 const Nav = () => {

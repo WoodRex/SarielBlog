@@ -1,5 +1,5 @@
 import { useParams } from '@redwoodjs/router'
-import CategoriedPostsCell from 'src/components/Blog/Category/CategoriedPostsCell/CategoriedPostsCell'
+import CategoriedPostsCell from 'src/components/Blog/Cell/CategoriedPostsCell/CategoriedPostsCell'
 
 
 const BlogCategoryArticlesPage = () => {

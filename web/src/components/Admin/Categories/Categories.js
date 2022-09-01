@@ -1,15 +1,14 @@
 import humanize from 'humanize-string'
-import { format, formatDistanceToNow } from 'date-fns'
 
 import { Link, routes } from '@redwoodjs/router'
 import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 
-import { QUERY } from 'src/components/Admin/Post/PostsCell'
+import { QUERY } from 'src/components/Admin/Cell/CategoriesCell'
 
-const DELETE_POST_MUTATION = gql`
-  mutation DeletePostMutation($id: Int!) {
-    deletePost(id: $id) {
+const DELETE_CATEGORY_MUTATION = gql`
+  mutation DeleteCategoryMutation($id: Int!) {
+    deleteCategory(id: $id) {
       id
     }
   }
@@ -40,14 +39,24 @@ const jsonTruncate = (obj) => {
   return truncate(JSON.stringify(obj, null, 2))
 }
 
+const timeTag = (datetime) => {
+  return (
+    datetime && (
+      <time dateTime={datetime} title={datetime}>
+        {new Date(datetime).toUTCString()}
+      </time>
+    )
+  )
+}
+
 const checkboxInputTag = (checked) => {
   return <input type="checkbox" checked={checked} disabled />
 }
 
-const PostsList = ({ posts }) => {
-  const [deletePost] = useMutation(DELETE_POST_MUTATION, {
+const CategoriesList = ({ categories }) => {
+  const [deleteCategory] = useMutation(DELETE_CATEGORY_MUTATION, {
     onCompleted: () => {
-      toast.success('Post deleted')
+      toast.success('Category deleted')
     },
     onError: (error) => {
       toast.error(error.message)
@@ -60,57 +69,32 @@ const PostsList = ({ posts }) => {
   })
 
   const onDeleteClick = (id) => {
-    if (confirm('Are you sure you want to delete post ' + id + '?')) {
-      deletePost({ variables: { id } })
+    if (confirm('Are you sure you want to delete category ' + id + '?')) {
+      deleteCategory({ variables: { id } })
     }
-  }
-
-  const sortedPosts = (posts) => {
-    return posts.slice().sort((a, b) => {
-      if (new Date(a.createdAt) < new Date(b.createdAt)) return 1
-      if (new Date(a.createdAt) > new Date(b.createdAt)) return -1
-      return 0
-    })
   }
 
   return (
     <div className="rw-table-wrapper-responsive">
       <table className="w-full">
         <tbody>
-          {sortedPosts(posts).map((post) => (
-            <tr key={post.id}>
+          {categories.map((category) => (
+            <tr key={category.id}>
+
               <td className="py-2">
                 <Link
-                  to={routes.adminPost({ id: post.id })}
+                  to={routes.adminCategory({ id: category.id })}
                   className="font-semibold text-indigo-700"
                 >
-                  {post.title}
+                  {truncate(category.name)}
                 </Link>
-              </td>
-
-              <td className="py-2 text-center text-sm">
-                {truncate(post.category.name)}
-              </td>
-
-              <td className="py-2 text-right text-sm">
-                <span className="block">
-                  Published{' '}
-                  <time dateTime={post.createdAt}>
-                    {formatDistanceToNow(new Date(post.createdAt), {
-                      addSuffix: true,
-                    })}
-                  </time>
-                </span>
-                <time className="block text-gray-500" dateTime={post.createdAt}>
-                  {format(new Date(post.createdAt), 'PPPPp')}
-                </time>
               </td>
 
               <td>
                 <nav className="rw-table-actions">
                   <Link
-                    to={routes.adminEditPost({ id: post.id })}
-                    title={'Edit post ' + post.id}
+                    to={routes.adminEditCategory({ id: category.id })}
+                    title={'Edit category ' + category.id}
                     className="rw-button rw-button-small rw-button-blue"
                   >
                     Edit
@@ -118,9 +102,9 @@ const PostsList = ({ posts }) => {
 
                   <button
                     type="button"
-                    title={'Delete post ' + post.id}
+                    title={'Delete category ' + category.id}
                     className="rw-button rw-button-small rw-button-red"
-                    onClick={() => onDeleteClick(post.id)}
+                    onClick={() => onDeleteClick(category.id)}
                   >
                     Delete
                   </button>
@@ -134,4 +118,4 @@ const PostsList = ({ posts }) => {
   )
 }
 
-export default PostsList
+export default CategoriesList

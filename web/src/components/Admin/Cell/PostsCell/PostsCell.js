@@ -1,6 +1,6 @@
 import { Link, routes } from '@redwoodjs/router'
 
-import Posts from 'src/components/Admin/Post/Posts'
+import Posts from 'src/components/Admin/Posts/Posts'
 
 export const QUERY = gql`
   query FindPosts {

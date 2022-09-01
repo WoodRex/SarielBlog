@@ -1,16 +1,11 @@
-import Post from 'src/components/Blog/Post/Post/Post'
-
-export const beforeQuery = ({ id }) => ({
-  variables: { id },
-})
+import Posts from "src/components/Blog/Posts/Posts"
 
 export const QUERY = gql`
-  query FindPostQuery($id: Int!) {
-    post: allPost(id: $id) {
+  query POST($id: Int!) {
+    posts: findPostsByCategoryId(id: $id) {
       id
       title
       body
-      author
       createdAt
       category {
         id
@@ -28,10 +23,6 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error.message}</div>
 )
 
-export const Success = ({ post }) => {
-  return (
-    <>
-      <Post post={post} />
-    </>
-  )
+export const Success = ({ posts }) => {
+  return posts.map((post) => <Posts key={post.id} post={post} summary={true} />)
 }

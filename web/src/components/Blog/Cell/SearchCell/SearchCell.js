@@ -1,5 +1,5 @@
 import InlineLoader from "src/components/Public/InlineLoader/InlineLoader"
-import Post from "src/components/Blog/Post/Post/Post"
+import Post from "src/components/Blog/Post/Post"
 
 export const beforeQuery = ({ term }) => ({ variables: { term } })
 

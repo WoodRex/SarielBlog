@@ -3,7 +3,7 @@ import { navigate, routes } from '@redwoodjs/router'
 import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 
-import PostForm from 'src/components/Admin/Post/PostForm'
+import PostForm from 'src/components/Admin/PostForm'
 
 export const QUERY = gql`
   query EditPostById($id: Int!) {

@@ -1,6 +1,6 @@
 import { Link, routes } from '@redwoodjs/router'
 
-import Categories from 'src/components/Admin/Category/Categories'
+import Categories from 'src/components/Admin/Categories/Categories'
 
 export const QUERY = gql`
   query FindCategories {

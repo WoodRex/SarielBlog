@@ -1,4 +1,4 @@
-import PostsCell from 'src/components/Admin/Post/PostsCell'
+import PostsCell from 'src/components/Admin/Cell/PostsCell/PostsCell'
 
 const PostsPage = () => {
   return <PostsCell />

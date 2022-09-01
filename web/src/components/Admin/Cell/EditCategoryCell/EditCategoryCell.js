@@ -3,7 +3,7 @@ import { navigate, routes } from '@redwoodjs/router'
 import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 
-import CategoryForm from 'src/components/Admin/Category/CategoryForm'
+import CategoryForm from 'src/components/Admin/CategoryForm'
 
 export const QUERY = gql`
   query EditCategoryById($id: Int!) {

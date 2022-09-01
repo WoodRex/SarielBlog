@@ -1,4 +1,4 @@
-import CategoryCell from 'src/components/Admin/Category/CategoryCell'
+import CategoryCell from 'src/components/Admin/Cell/CategoryCell/CategoryCell'
 
 const CategoryPage = ({ id }) => {
   return <CategoryCell id={id} />

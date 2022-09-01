@@ -1,6 +1,6 @@
 import InlineLoader from "src/components/Public/InlineLoader/InlineLoader"
 import Pagination from "src/components/Public/Pagination/Pagination"
-import Posts from 'src/components/Blog/Post/Posts/Posts'
+import Posts from 'src/components/Blog/Posts/Posts'
 
 export const beforeQuery = ({ page, perPage }) => {
   page = page ? parseInt(page) : 1

@@ -1,4 +1,4 @@
-import NewPostCell from 'src/components/Admin/Post/NewPostCell'
+import NewPostCell from 'src/components/Admin/Cell/NewPostCell/NewPostCell'
 
 const NewPostPage = () => {
   return <NewPostCell />

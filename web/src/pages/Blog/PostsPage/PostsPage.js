@@ -1,7 +1,7 @@
 import { useParams } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 
-import PostsCell from 'src/components/Blog/Post/PostsCell/PostsCell'
+import PostsCell from 'src/components/Blog/Cell/PostsCell/PostsCell'
 
 // output variable to env later
 const POSTS_PER_PAGE = 5

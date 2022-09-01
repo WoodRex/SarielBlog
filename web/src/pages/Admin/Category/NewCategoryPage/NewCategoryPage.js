@@ -1,4 +1,4 @@
-import NewCategory from 'src/components/Admin/Category/NewCategory'
+import NewCategory from 'src/components/Admin/Cell/NewCategory/NewCategory'
 
 const NewCategoryPage = () => {
   return <NewCategory />

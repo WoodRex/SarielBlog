@@ -1,4 +1,4 @@
-import Category from "src/components/Blog/Category/Category/Category"
+import Category from "src/components/Blog/Category/Category"
 
 export const QUERY = gql`
   query CategoriesQuery {
