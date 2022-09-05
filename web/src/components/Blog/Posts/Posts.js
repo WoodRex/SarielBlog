@@ -4,7 +4,6 @@ import MarkdownIt from 'markdown-it'
 import { format } from 'date-fns'
 import { Link, routes } from '@redwoodjs/router'
 
-
 const md = new MarkdownIt()
 
 const formatDate = (date) => {
@@ -31,12 +30,9 @@ const Posts = ({ post, summary = false }) => {
   return (
     <>
       {/* <MetaTags title={post.title} description="Home page" /> */}
-      <header>
-        <time className="font-light">Published in <span className="font-semibold">Simple Blog</span> · {formatDate(post.createdAt)}</time>
-      </header>
       <article className="mt-4 mb-12">
         <header className="flex items-center justify-between">
-          <h1 className="text-2xl font-semibold">
+          <h1 className="border-l-4 border-zinc-800 text-4xl font-bold my-6 pl-4">
             <Link
               to={routes.post({ id: post.id })}
               className="text-grey-800 hover:text-grey-600 rounded"
@@ -45,6 +41,9 @@ const Posts = ({ post, summary = false }) => {
             </Link>
           </h1>
           {/* <h2 className="text-sm text-gray-600">by {post.author}</h2> */}
+        </header>
+        <header className='mb-6'>
+          <time className="font-light">Published in <span className="font-semibold">Simple Blog</span> · {formatDate(post.createdAt)}</time>
         </header>
         <div className="mt-2">
           <div

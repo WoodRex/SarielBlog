@@ -12,10 +12,10 @@ const formatDate = (date) => {
 const Post = ({ post, summary = false }) => {
   return (
     <>
-      <header className='mt-5'>
+      <header className='sm:mt-5'>
         <div className='grid grid-rows-3 grid-flow-col gap-1 w-48'>
           <img
-                className="inline-block w-12 rounded-full row-span-3"
+                className="inline-block w-12 rounded-full row-span-3 mt-1"
                 alt="User Avatar"
                 src={avatar}
             />
@@ -24,14 +24,13 @@ const Post = ({ post, summary = false }) => {
         </div>
       </header>
       <article className="mt-3 mb-12">
-        <header className="flex items-center justify-between">
-          <h1 className="text-3xl font-semibold">
-            <span
-              className="text-grey-800 rounded"
-            >
+        <header>
+          <div className="sm:grid justify-items-center">
+            <h1 className="text-3xl font-bold mb-3 pl-4 text-center">
               {post.title}
-            </span>
-          </h1>
+            </h1>
+            <hr className='my-6 md:w-1/6'/>
+          </div>
         </header>
         <div className="mt-2" data-color-mode="light">
           <MDEditor.Markdown source={post.body} style={{ whiteSpace: 'pre-wrap' }} />

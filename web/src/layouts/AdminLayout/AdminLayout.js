@@ -72,7 +72,7 @@ const AdminLayout = ({ children }) => {
             </ul>
           </nav>
         </aside>
-        <section className="mt-4 flex-1">{children}</section>
+        <section className="mt-4 sm:flex-1">{children}</section>
       </main>
     </div>
   )

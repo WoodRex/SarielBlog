@@ -33,7 +33,7 @@ const jsonDisplay = (obj) => {
 
 export const Success = ({ recentPosts }) => {
   return (
-    <div className="">
+    <div>
       <h2 className="font-semibold text-indigo-800">Recent Articles</h2>
       <ul className="mt-2 text-sm">
         {recentPosts.posts.map((post) => (

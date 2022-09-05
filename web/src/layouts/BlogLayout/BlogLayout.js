@@ -68,7 +68,7 @@ const BlogLayout = ({ children }) => {
             </ul>
           </nav>
         </header>
-        <main className="flex items-start">
+        <main className="sm:flex items-start">
           <section className="flex-1 bg-white px-8 pt-4 pb-8 shadow">
             {children}
           </section>
