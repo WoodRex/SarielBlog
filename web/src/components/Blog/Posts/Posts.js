@@ -53,7 +53,7 @@ const Posts = ({ post, summary = false }) => {
         </div>
         <footer className="flex items-center mt-4 text-xs text-gray-600">
           {post.category.name && (
-            <ul className="text-right inline-block bg-gray-200 hover:bg-gray-300 text-gray-600 hover:text-gray-800 px-2 py-1 mt-3 rounded">
+            <ul className="text-right bg-gray-700 text-zinc-100 px-2 py-1 mt-3 rounded-full">
               {post.category.name}
             </ul>
           )}

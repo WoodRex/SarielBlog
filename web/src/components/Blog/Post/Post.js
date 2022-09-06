@@ -35,13 +35,19 @@ const Post = ({ post, summary = false }) => {
         <div className="mt-2" data-color-mode="light">
           <MDEditor.Markdown source={post.body} style={{ whiteSpace: 'pre-wrap' }} />
         </div>
-        {/* <footer className="flex items-center mt-4 text-xs text-gray-600">
+        <hr className='my-6'/>
+        <footer className="flex items-center mt-4 text-xs text-gray-600">
           {post.category.name && (
-            <ul className="flex-1 text-right">
+            <ul className="flex-none text-left bg-gray-700 text-zinc-100 px-2 py-1 mt-3 rounded-full">
               {post.category.name}
             </ul>
           )}
-        </footer> */}
+          <a
+            className='flex-1 text-right py-1 mt-3'
+          >
+            Share
+          </a>
+        </footer>
       </article>
     </>
   )
