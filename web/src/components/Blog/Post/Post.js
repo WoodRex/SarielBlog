@@ -2,14 +2,17 @@ import { format } from 'date-fns'
 
 import avatar from 'src/assets/img/avatar.jpg'
 import MDEditor from '@uiw/react-md-editor'
-
+import { toast } from '@redwoodjs/web/toast'
 
 const formatDate = (date) => {
   return format(new Date(date), 'MMM dd')
 }
 
+const copyUrl = (url) => {
+  navigator.clipboard.writeText(url);
+}
 
-const Post = ({ post, summary = false }) => {
+const Post = ({ post, currentUrl, summary = false }) => {
   return (
     <>
       <header className='sm:mt-5'>
@@ -36,14 +39,18 @@ const Post = ({ post, summary = false }) => {
           <MDEditor.Markdown source={post.body} style={{ whiteSpace: 'pre-wrap' }} />
         </div>
         <hr className='my-6'/>
-        <footer className="flex items-center mt-4 text-xs text-gray-600">
+        <footer className="flex items-center mt-4 text-sm text-gray-600">
           {post.category.name && (
             <ul className="flex-none text-left bg-gray-700 text-zinc-100 px-2 py-1 mt-3 rounded-full">
               {post.category.name}
             </ul>
           )}
+          <div className='flex-auto w-64'></div>
           <a
-            className='flex-1 text-right py-1 mt-3'
+            className='flex-1 text-right hover:text-gray-300 py-1 mt-3 text-sm cursor-pointer'
+            onClick={() => {
+              copyUrl(currentUrl);
+            }}
           >
             Share
           </a>

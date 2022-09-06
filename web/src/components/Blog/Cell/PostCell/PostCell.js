@@ -1,3 +1,4 @@
+import { routes, useLocation } from '@redwoodjs/router'
 import Post from 'src/components/Blog/Post/Post'
 
 export const beforeQuery = ({ id }) => ({
@@ -29,9 +30,13 @@ export const Failure = ({ error }) => (
 )
 
 export const Success = ({ post }) => {
+  const { pathname, search, hash } = useLocation()
+
+  // let currentUrl = routes.post({id : post.id });
+  let currentUrl = window.location.host + pathname;
   return (
     <>
-      <Post post={post} />
+      <Post post={post} currentUrl={currentUrl}/>
     </>
   )
 }
