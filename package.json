@@ -13,7 +13,10 @@
   },
   "eslintConfig": {
     "extends": "@redwoodjs/eslint-config",
-    "root": true
+    "root": true,
+    "rules": {
+      "import/order": "off"
+    }
   },
   "engines": {
     "node": ">=14.19 <=16.x",

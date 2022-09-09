@@ -2,7 +2,7 @@ import { format } from 'date-fns'
 
 import avatar from 'src/assets/img/avatar.jpg'
 import MDEditor from '@uiw/react-md-editor'
-import { toast } from '@redwoodjs/web/toast'
+import PostNav from '../PostNav/PostNav'
 
 const formatDate = (date) => {
   return format(new Date(date), 'MMM dd')
@@ -12,7 +12,7 @@ const copyUrl = (url) => {
   navigator.clipboard.writeText(url);
 }
 
-const Post = ({ post, currentUrl, summary = false }) => {
+const Post = ({ post, currentUrl, key, summary = false }) => {
   return (
     <>
       <header className='sm:mt-5'>
@@ -55,6 +55,8 @@ const Post = ({ post, currentUrl, summary = false }) => {
             Share
           </a>
         </footer>
+        <hr className='my-6'/>
+        <PostNav />
       </article>
     </>
   )
