@@ -1,5 +1,5 @@
 import InlineLoader from "src/components/Public/InlineLoader/InlineLoader"
-import Post from "src/components/Blog/Post/Post"
+import Posts from "src/components/Blog/Posts"
 
 export const beforeQuery = ({ term }) => ({ variables: { term } })
 
@@ -19,6 +19,14 @@ export const QUERY = gql`
 }
 `
 
+const sortedPosts = (articles) => {
+  return articles.slice().sort((a, b) => {
+    if (new Date(a.createdAt) < new Date(b.createdAt)) return 1
+    if (new Date(a.createdAt) > new Date(b.createdAt)) return -1
+    return 0
+  })
+}
+
 export const Loading = () => InlineLoader
 
 export const Failure = ({ error }) => (
@@ -34,7 +42,12 @@ export const Success = ({ posts, variables }) => {
         {variables.term}&rdquo;:
       </h2>
       {posts.length ? (
-        posts.map((post) => <Post key={post.id} post={post} summary={true} />)
+        sortedPosts(posts).map((post) =>
+        <Posts
+          key={post.id}
+          post={post}
+          summary={true}
+        />)
       ) : (
         <h3 className="mt-4 text-xl text-gray-500">
           No article is found. Try a different term
