@@ -1,6 +1,5 @@
 import { routes, useLocation } from '@redwoodjs/router'
 import Post from 'src/components/Blog/Post/Post'
-import PostNav from 'src/components/Blog/PostNav/PostNav'
 
 export const beforeQuery = ({ id }) => ({
   variables: { id },

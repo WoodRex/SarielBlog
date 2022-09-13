@@ -46,6 +46,21 @@ export const recentPosts = async ({
   }
 }
 
+export const findNextPost =  ({ id }) => {
+  return {
+    posts: db.post.findMany({
+      take: 1,
+      skip: 1,
+      cursor: {
+        id: parseInt(id),
+      },
+      orderBy: {
+        id: "asc",
+      },
+    })
+  }
+}
+
 export const findPostsByCategoryId = ({ id }) => {
   return db.category
     .findUnique({

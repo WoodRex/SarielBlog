@@ -2,7 +2,6 @@ import { format } from 'date-fns'
 
 import avatar from 'src/assets/img/avatar.jpg'
 import MDEditor from '@uiw/react-md-editor'
-import PostNav from '../PostNav/PostNav'
 
 const formatDate = (date) => {
   return format(new Date(date), 'MMM dd')
@@ -56,7 +55,16 @@ const Post = ({ post, currentUrl, key, summary = false }) => {
           </a>
         </footer>
         <hr className='my-6'/>
-        <PostNav />
+        <footer className='flex'>
+          <div className='flex-1'>
+            1
+          </div>
+          <div className='flex-auto w-40'>
+          </div>
+          <div className='flex-1 text-right'>
+            2
+          </div>
+        </footer>
       </article>
     </>
   )
