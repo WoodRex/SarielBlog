@@ -5,8 +5,8 @@ export const beforeQuery = ({ id }) => ({
 })
 
 export const QUERY = gql`
-  query FindNextPostNavQuery($id: Int!) {
-    nextPost: findNextPost(id: $id) {
+  query FindPrevPostNavQuery($id: Int!) {
+    prevPost: findPrevPost(id: $id) {
       posts {
         id
         title
@@ -33,11 +33,11 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error?.message}</div>
 )
 
-export const Success = ({ nextPost }) => {
+export const Success = ({ prevPost }) => {
   return (
     <div>
     {
-      (nextPost.posts).map((post) => (
+      (prevPost.posts).map((post) => (
         <li key={post.id} className="my-2 list-none">
           <Link
             to={routes.post({ id: post.id })}

@@ -2,6 +2,9 @@ import { format } from 'date-fns'
 
 import avatar from 'src/assets/img/avatar.jpg'
 import MDEditor from '@uiw/react-md-editor'
+import NextPostNavCell from 'src/components/Blog/Cell/NextPostNavCell/NextPostNavCell'
+import PrevPostNavCell from 'src/components/Blog/Cell/PrevPostNavCell/PrevPostNavCell'
+
 
 const formatDate = (date) => {
   return format(new Date(date), 'MMM dd')
@@ -57,12 +60,12 @@ const Post = ({ post, currentUrl, key, summary = false }) => {
         <hr className='my-6'/>
         <footer className='flex'>
           <div className='flex-1'>
-            1
+            <PrevPostNavCell id={post.id} />
           </div>
           <div className='flex-auto w-40'>
           </div>
           <div className='flex-1 text-right'>
-            2
+            <NextPostNavCell id={post.id} />
           </div>
         </footer>
       </article>
