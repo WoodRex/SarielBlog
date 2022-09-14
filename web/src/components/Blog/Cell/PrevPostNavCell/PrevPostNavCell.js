@@ -43,7 +43,7 @@ export const Success = ({ prevPost }) => {
             to={routes.post({ id: post.id })}
             className="text-slate-800 rounded hover:text-sky-400 text-lg font-medium"
           >
-            {jsonDisplay(post.title)}
+          {jsonDisplay(post.title)}
           </Link>
         </li>
       ))

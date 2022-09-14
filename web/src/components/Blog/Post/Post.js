@@ -34,7 +34,7 @@ const Post = ({ post, currentUrl, key, summary = false }) => {
             <h1 className="text-3xl font-bold mb-3 pl-4 text-center">
               {post.title}
             </h1>
-            <hr className='my-6 md:w-1/6'/>
+            <hr className='my-4 sm:w-1/5 ml-4'/>
           </div>
         </header>
         <div className="mt-2" data-color-mode="light">
