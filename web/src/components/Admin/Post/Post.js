@@ -41,7 +41,7 @@ const Post = ({ post, summary = false }) => {
         <header className="flex items-center justify-between">
           <h1 className="text-2xl font-semibold">
             <span
-              className="text-indigo-600 rounded"
+              className="text-emerald-500 rounded"
             >
               {post.title}
             </span>

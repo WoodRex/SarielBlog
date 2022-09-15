@@ -82,7 +82,7 @@ const PostsList = ({ posts }) => {
               <td className="py-2">
                 <Link
                   to={routes.adminPost({ id: post.id })}
-                  className="font-semibold text-indigo-700"
+                  className="font-semibold text-emerald-700"
                 >
                   {post.title}
                 </Link>

@@ -1,13 +1,13 @@
 const Footer = () => {
   return (
-    <footer className="bg-indigo-600 py-4 text-center text-sm text-indigo-200">
+    <footer className="bg-zinc-100 py-4 text-center text-sm text-indigo-200">
       <span className="inline-grid grid-cols-3 gap-2">
           <span>
             {/* Twitter */}
             <a
               href=''
               target="_blank"
-              className="bg-gray-400 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded-full"
+              className="bg-gray-600 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded-full"
             >
               <svg
                 className="w-3 h-3 fill-current"
@@ -25,7 +25,7 @@ const Footer = () => {
             <a
               href=''
               target="_blank"
-              className="bg-gray-400 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded-full"
+              className="bg-gray-600 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded-full"
             >
               <svg
                 className="w-3 h-3 fill-current"
@@ -45,7 +45,7 @@ const Footer = () => {
             <a
               href='https://github.com/WoodRex'
               target="_blank"
-              className="bg-gray-400 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded-full"
+              className="bg-gray-600 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded-full"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +67,7 @@ const Footer = () => {
             </a>
           </span>
       </span>
-      <div className="flex-1 mt-4">Woodrex 2022</div>
+      <div className="flex-1 mt-4 text-gray-800">Woodrex 2022</div>
     </footer>
   )
 }

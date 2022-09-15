@@ -10,7 +10,7 @@ const AdminLayout = ({ children }) => {
         <div>
           <Link
             to={routes.home()}
-            className="text-xs text-gray-500 hover:text-gray-800"
+            className="text-xs text-emerald-500 hover:text-emerald-700"
           >
             &laquo; Back to Site
           </Link>
@@ -27,7 +27,7 @@ const AdminLayout = ({ children }) => {
           <a
             href="#"
             onClick={logOut}
-            className="text-xs uppercase text-indigo-500 hover:text-indigo-800"
+            className="text-xs uppercase text-emerald-500 hover:text-emerald-800"
           >
             Logout
           </a>
@@ -40,7 +40,7 @@ const AdminLayout = ({ children }) => {
               <li>
                 <Link
                   to={routes.adminPosts()}
-                  className="font-semibold text-indigo-700"
+                  className="font-semibold text-emerald-500"
                 >
                   All Posts
                 </Link>
@@ -48,7 +48,7 @@ const AdminLayout = ({ children }) => {
               <li className="mt-8">
                 <Link
                   to={routes.adminCategories()}
-                  className="font-semibold text-indigo-700"
+                  className="font-semibold text-emerald-500"
                 >
                   All Categories
                 </Link>
@@ -56,7 +56,7 @@ const AdminLayout = ({ children }) => {
               <li className="mt-8">
                 <Link
                   to={routes.adminNewPost()}
-                  className="rounded bg-indigo-700 px-3 py-2 text-xs uppercase tracking-wide text-white hover:bg-indigo-600"
+                  className="rounded bg-emerald-500 px-3 py-2 text-xs uppercase tracking-wide text-white hover:bg-emerald-400"
                 >
                   + New Post
                 </Link>
@@ -64,7 +64,7 @@ const AdminLayout = ({ children }) => {
               <li className="mt-8">
                 <Link
                   to={routes.adminNewCategory()}
-                  className="rounded bg-indigo-700 px-3 py-2 text-xs uppercase tracking-wide text-white hover:bg-indigo-600"
+                  className="rounded bg-emerald-500 px-3 py-2 text-xs uppercase tracking-wide text-white hover:bg-emerald-400"
                 >
                   + New Category
                 </Link>

@@ -84,7 +84,7 @@ const CategoriesList = ({ categories }) => {
               <td className="py-2">
                 <Link
                   to={routes.adminCategory({ id: category.id })}
-                  className="font-semibold text-indigo-700"
+                  className="font-semibold text-emerald-700"
                 >
                   {truncate(category.name)}
                 </Link>
