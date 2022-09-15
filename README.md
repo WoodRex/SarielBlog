@@ -2,6 +2,8 @@
 
 > ⚠️ It's in progress. Until that time, I recommend checking out [other example projects](https://github.com/redwoodjs?q=example-).
 
+⚠️ Upgraded environment to redwoodJS 3.0 RC
+
 ![frontend1](https://user-images.githubusercontent.com/70128487/186114165-f9ee2c1c-2b72-4415-8004-9e855bfb33ee.PNG)
 ![backend1](https://user-images.githubusercontent.com/70128487/186114185-98ce8391-56ce-44de-bb4d-2c396d435e00.PNG)
 
