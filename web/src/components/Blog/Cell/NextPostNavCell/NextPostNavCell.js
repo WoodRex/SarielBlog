@@ -1,5 +1,7 @@
 import { Link, routes } from "@redwoodjs/router"
 
+import truncate from "html-truncate"
+
 export const beforeQuery = ({ id }) => ({
   variables: { id },
 })
@@ -16,12 +18,13 @@ export const QUERY = gql`
 `
 
 const jsonDisplay = (obj) => {
+  obj = truncate(obj, 16)
   let cleaned = JSON.stringify(obj, null, 2)
 
   return (
-    <pre>
-      <code>{cleaned.replace(/\"/g, "")}</code>
-    </pre>
+    <>
+      {cleaned.replace(/\"/g, "")}
+    </>
   )
 }
 
