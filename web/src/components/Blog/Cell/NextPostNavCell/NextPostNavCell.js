@@ -38,19 +38,29 @@ export const Failure = ({ error }) => (
 
 export const Success = ({ nextPost }) => {
   return (
-    <div>
-    {
-      (nextPost.posts).map((post) => (
-        <li key={post.id} className="my-2 list-none">
-          <Link
-            to={routes.post({ id: post.id })}
-            className="text-slate-800 rounded hover:text-sky-400 text-lg font-medium"
-          >
-          {jsonDisplay(post.title)}
-          </Link>
-        </li>
-      ))
-    }
-    </div>
+    <>
+      <div className="inline-grid">
+        {
+          (nextPost.posts).map((post) => (
+            <li key={post.id} className="my-2 list-none">
+              <Link
+                to={routes.post({ id: post.id })}
+                className="text-slate-800 rounded hover:text-emerald-700 text-lg font-medium"
+              >
+              {jsonDisplay(post.title)}
+              </Link>
+            </li>
+          ))
+        }
+      </div>
+      {nextPost.posts.length ? (
+        <span
+          className="flex-1 mx-3"
+        >
+          »
+        </span>
+      ) : (<span></span>)
+      }
+    </>
   )
 }

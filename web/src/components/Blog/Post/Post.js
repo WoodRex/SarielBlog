@@ -49,7 +49,7 @@ const Post = ({ post, currentUrl, key, summary = false }) => {
           )}
           <div className='flex-auto w-64'></div>
           <a
-            className='flex-1 text-right hover:text-gray-300 py-1 mt-3 text-sm cursor-pointer'
+            className='flex-1 text-right hover:text-emerald-500 py-1 mt-3 text-sm cursor-pointer'
             onClick={() => {
               copyUrl(currentUrl);
             }}
