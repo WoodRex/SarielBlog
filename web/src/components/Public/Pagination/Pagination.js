@@ -1,7 +1,9 @@
 import { Link, routes } from '@redwoodjs/router'
 
+
 const Pagination = ({ count, page, perPage }) => {
   const items = []
+
   for (let i = 0; i < Math.ceil(count / perPage); i++) {
     items.push(
       <li key={i} className="inline-block mx-1 text-indigo-400">

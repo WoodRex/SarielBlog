@@ -27,11 +27,11 @@ const Routes = () => {
         <Route path="/admin/posts" page={AdminPostPostsPage} name="adminPosts" />
       </Set>
     </Private>
-      <Set wrap={BlogLayout}>
+      <Set wrap={BlogLayout} prerender>
         <Route path="/" page={BlogPostsPage} name="home" />
         <Route path="/about" page={BlogAboutPage} name="about" />
         <Route path="/page/{page:Int}" page={BlogPostsPage} name="page" />
-        <Route path="/category/{id:Int}" page={BlogCategoriedPostsPage} name="category" />
+        <Route path="/category/{id:Int}/page/{page:Int}" page={BlogCategoriedPostsPage} name="category" />
         <Route path="/post/{id:Int}" page={BlogPostPage} name="post" />
         <Route path="/search/{term:String}" page={BlogSearchPage} name="search" />
       </Set>

@@ -76,12 +76,34 @@ export const findNextPost =  ({ id }) => {
   }
 }
 
-export const findPostsByCategoryId = ({ id }) => {
-  return db.category
-    .findUnique({
-      where: { id: parseInt(id) },
-    })
-    .post({ include: { category: true }})
+export const findPostsByCategoryId = async ({
+    id,
+    page = 1,
+    limit = 50,
+    order = { createdAt: 'desc' },
+  }) => {
+    const offset = (page - 1) * limit
+
+    return {
+      posts: db.category.findUnique({
+          where: {
+            id: parseInt(id),
+          }
+        })
+        .post({
+          include: { category: true },
+          take: limit,
+          skip: offset,
+          orderBy: order,
+        }),
+      count: db.post.count({
+          where: {
+            category: {
+              id: parseInt(id),
+            }
+          }
+        })
+    }
 }
 
 export const post = ({ id }) => {
