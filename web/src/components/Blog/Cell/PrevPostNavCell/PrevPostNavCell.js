@@ -18,7 +18,7 @@ export const QUERY = gql`
 `
 
 const jsonDisplay = (obj) => {
-  obj = truncate(obj, 16)
+  obj = truncate(obj, 32)
   let cleaned = JSON.stringify(obj, null, 2)
 
   return (
@@ -39,15 +39,7 @@ export const Failure = ({ error }) => (
 export const Success = ({ prevPost }) => {
   return (
     <>
-      {prevPost.posts.length ? (
-        <span
-          className="flex-1"
-        >
-          «
-        </span>
-        ) : (<span></span>)
-        }
-      <div className="inline-grid mx-3">
+      <div className="inline-grid">
       {
         (prevPost.posts).map((post) => (
           <li key={post.id} className="my-2 list-none hover:text-emerald-700">

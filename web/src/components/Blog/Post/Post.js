@@ -40,7 +40,7 @@ const Post = ({ post, currentUrl, key, summary = false }) => {
         <div className="mt-2" data-color-mode="light">
           <MDEditor.Markdown source={post.body} style={{ whiteSpace: 'pre-wrap' }} />
         </div>
-        <hr className='my-6'/>
+        <div className='my-6'></div>
         <footer className="flex items-center mt-4 text-sm text-gray-600">
           {post.category.name && (
             <ul className="flex-none text-left bg-gray-700 text-zinc-100 px-2 py-1 mt-3 rounded-full">
@@ -60,11 +60,13 @@ const Post = ({ post, currentUrl, key, summary = false }) => {
         <hr className='my-6'/>
         <footer className='flex'>
           <div className='flex-1'>
+            <p className='font-semibold'>Prev</p>
             <PrevPostNavCell id={post.id} />
           </div>
           <div className='flex-auto w-40'>
           </div>
           <div className='flex-1 text-right'>
+            <p className='font-semibold'>Next</p>
             <NextPostNavCell id={post.id} />
           </div>
         </footer>

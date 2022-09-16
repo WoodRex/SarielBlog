@@ -18,7 +18,7 @@ export const QUERY = gql`
 `
 
 const jsonDisplay = (obj) => {
-  obj = truncate(obj, 16)
+  obj = truncate(obj, 32)
   let cleaned = JSON.stringify(obj, null, 2)
 
   return (
@@ -53,14 +53,6 @@ export const Success = ({ nextPost }) => {
           ))
         }
       </div>
-      {nextPost.posts.length ? (
-        <span
-          className="flex-1 mx-3"
-        >
-          »
-        </span>
-      ) : (<span></span>)
-      }
     </>
   )
 }
