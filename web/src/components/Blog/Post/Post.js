@@ -1,9 +1,11 @@
 import { format } from 'date-fns'
+import { useState } from 'react'
 
 import avatar from 'src/assets/img/avatar.jpg'
 import MDEditor from '@uiw/react-md-editor'
 import NextPostNavCell from 'src/components/Blog/Cell/NextPostNavCell/NextPostNavCell'
 import PrevPostNavCell from 'src/components/Blog/Cell/PrevPostNavCell/PrevPostNavCell'
+import Modal from 'src/components/Blog/Modal/Modal'
 
 
 const formatDate = (date) => {
@@ -15,6 +17,9 @@ const copyUrl = (url) => {
 }
 
 const Post = ({ post, currentUrl, key, summary = false }) => {
+
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
       <header className='sm:mt-5'>
@@ -40,7 +45,12 @@ const Post = ({ post, currentUrl, key, summary = false }) => {
         <div className="mt-2" data-color-mode="light">
           <MDEditor.Markdown source={post.body} style={{ whiteSpace: 'pre-wrap' }} />
         </div>
-        <div className='my-6'></div>
+        <div className='my-6'>
+          <button className="rw-button rw-button-blue rw-button-blue:hover block mx-auto" onClick={() => setIsOpen(true)}>
+            B<span className='lowercase'>uy me a coffee</span>
+          </button>
+          {isOpen && <Modal setIsOpen={setIsOpen} />}
+        </div>
         <footer className="flex items-center mt-4 text-sm text-gray-600">
           {post.category.name && (
             <ul className="flex-none text-left bg-gray-700 text-zinc-100 px-2 py-1 mt-3 rounded-full">
