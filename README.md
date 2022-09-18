@@ -1,10 +1,8 @@
 ## RedwoodJS Simple Blog
 
-> ⚠️ It's in progress. Until that time, I recommend checking out [other example projects](https://github.com/redwoodjs?q=example-).
+⚠️ Upgraded environment to redwoodJS 3.1
 
-⚠️ Upgraded environment to redwoodJS 3.0 RC
-
-![frontend1]()
+![Frontend](https://user-images.githubusercontent.com/70128487/190884508-407d69d0-518c-4dc8-bb01-7805817a3b16.png)
 
 ![Backend](https://user-images.githubusercontent.com/70128487/190848164-f6d03406-3d6a-4341-868d-30176485769a.png)
 
