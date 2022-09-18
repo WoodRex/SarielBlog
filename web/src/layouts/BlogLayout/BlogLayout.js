@@ -3,54 +3,48 @@ import { NavLink, routes } from '@redwoodjs/router'
 
 import Nav from 'src/components/Blog/Nav/Nav'
 import Footer from 'src/components/Blog/Footer/Footer'
-
-import logo from 'src/assets/img/logo.png'
+import styles from 'src/nav.css'
 
 const BlogLayout = ({ children }) => {
   const { isAuthenticated, logOut } = useAuth()
 
   return (
     <div className="max-w-8xl mx-auto">
-      <div className="sm:mx-8">
-        <header className="flex-wrap items-center border-b-4 border-indigo-300 bg-indigo-600 px-8 py-6 text-white md:flex ">
-          <div className="flex flex-1">
-            <div className="mt-1 flex-grow text-center md:text-left">
-              <NavLink to={routes.home()}>
-                <img
-                  className="inline-block w-80"
-                  src={logo}
-                  alt="Hammer Review Logo"
-                />
-              </NavLink>
-            </div>
-          </div>
-          <nav className="min-h-screenmt-4 mt-4 flex-grow sm:flex-grow-0 md:mt-0">
+      <div>
+        <header className="flex-wrap items-center img-container text-white md:flex h-50vh">
+          <nav className="flex-grow sm:flex-grow-0 md:mt-0 md:mx-auto h-50vh">
             <ul className="flex justify-center">
-              <li className="mx-4 font-semibold uppercase">
+              <li className="m-4 font-semibold uppercase">
+                <NavLink
+                  to={routes.home()}
+                  className="text-emerald-200 hover:text-white"
+                >
+                  Home
+                </NavLink>
+              </li>
+              <li className="m-4 font-semibold uppercase">
                 <NavLink
                   to={routes.about()}
-                  className="text-indigo-200 hover:text-indigo-800"
-                  activeClassName="bg-white text-indigo-600 px-2 py-1 rounded"
+                  className="text-emerald-200 hover:text-white"
                 >
                   About
                 </NavLink>
               </li>
               {isAuthenticated && (
-                <li className="mx-4 font-semibold uppercase">
+                <li className="m-4 font-semibold uppercase">
                   <NavLink
                     to={routes.adminPosts()}
-                    className="text-white hover:text-indigo-800"
-                    activeClassName="bg-white text-indigo-600 px-2 py-1 rounded"
+                    className="text-emerald-200 hover:text-white"
                   >
                     Admin
                   </NavLink>
                 </li>
               )}
               {isAuthenticated ? (
-                <li className="mx-4 font-semibold uppercase">
+                <li className="m-4 font-semibold uppercase">
                   <a
                     onClick={logOut}
-                    className="cursor-pointer text-indigo-200 hover:text-indigo-800"
+                    className="cursor-pointer text-emerald-200 hover:text-white"
                   >
                     Logout
                   </a>
@@ -59,7 +53,7 @@ const BlogLayout = ({ children }) => {
                 <li className="mx-4 font-semibold uppercase">
                   <NavLink
                     to={routes.login()}
-                    className="text-white hover:text-indigo-800"
+                    className="text-emerald-200 hover:text-white"
                     activeClassName="bg-white text-indigo-600 px-2 py-1 rounded"
                   >
                     Login
@@ -68,6 +62,19 @@ const BlogLayout = ({ children }) => {
               )}
             </ul>
           </nav>
+          <div className='preview-overlay mt-auto'>
+            <svg className="w-full mt-2 preview-waves" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shapeRendering="auto">
+              <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+              </defs>
+              <g className="preview-parallax">
+                <use xlinkHref="#gentle-wave" x="48" y="0" fill="var(--gentle-wave1)"></use>
+                <use xlinkHref="#gentle-wave" x="48" y="3" fill="var(--gentle-wave2)"></use>
+                <use xlinkHref="#gentle-wave" x="48" y="5" fill="var(--gentle-wave3)"></use>
+                <use xlinkHref="#gentle-wave" x="48" y="7" fill="var(--gentle-wave)"></use>
+              </g>
+            </svg>
+          </div>
         </header>
         <main className="sm:flex items-start">
           <section className="flex-1 bg-white px-8 pt-4 pb-8 shadow">
