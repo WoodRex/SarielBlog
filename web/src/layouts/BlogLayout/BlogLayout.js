@@ -54,7 +54,6 @@ const BlogLayout = ({ children }) => {
                   <NavLink
                     to={routes.login()}
                     className="text-emerald-200 hover:text-white"
-                    activeClassName="bg-white text-indigo-600 px-2 py-1 rounded"
                   >
                     Login
                   </NavLink>
