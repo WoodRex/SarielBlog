@@ -50,7 +50,7 @@ const BlogLayout = ({ children }) => {
                   </a>
                 </li>
               ) : (
-                <li className="mx-4 font-semibold uppercase">
+                <li className="m-4 font-semibold uppercase">
                   <NavLink
                     to={routes.login()}
                     className="text-emerald-200 hover:text-white"
