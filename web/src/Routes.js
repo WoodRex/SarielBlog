@@ -27,19 +27,19 @@ const Routes = () => {
         <Route path="/admin/posts" page={AdminPostPostsPage} name="adminPosts" />
       </Set>
     </Private>
-      <Set wrap={BlogLayout} prerender>
-        <Route path="/" page={BlogPostsPage} name="home" />
-        <Route path="/about" page={BlogAboutPage} name="about" />
-        <Route path="/page/{page:Int}" page={BlogPostsPage} name="page" />
-        <Route path="/category/{id:Int}/page/{page:Int}" page={BlogCategoriedPostsPage} name="category" />
-        <Route path="/post/{id:Int}" page={BlogPostPage} name="post" />
-        <Route path="/search/{term:String}" page={BlogSearchPage} name="search" />
-      </Set>
-        <Route path="/admin/login" page={BlogLoginPage} name="login" />
-        <Route path="/signup" page={BlogSignupPage} name="signup" />
-        <Route path="/forgot-password" page={BlogForgotPasswordPage} name="forgotPassword" />
-        <Route path="/reset-password" page={BlogResetPasswordPage} name="resetPassword" />
-        <Route notfound page={NotFoundPage} />
+    <Set wrap={BlogLayout}>
+      <Route path="/" page={BlogPostsPage} name="home" prerender/>
+      <Route path="/about" page={BlogAboutPage} name="about" prerender/>
+      <Route path="/page/{page:Int}" page={BlogPostsPage} name="page" prerender/>
+      <Route path="/category/{id:Int}/page/{page:Int}" page={BlogCategoriedPostsPage} name="category" prerender/>
+      <Route path="/post/{id:Int}" page={BlogPostPage} name="post" prerender/>
+      <Route path="/search/{term:String}" page={BlogSearchPage} name="search" />
+    </Set>
+      <Route path="/admin/login" page={BlogLoginPage} name="login" />
+      <Route path="/signup" page={BlogSignupPage} name="signup" />
+      <Route path="/forgot-password" page={BlogForgotPasswordPage} name="forgotPassword" />
+      <Route path="/reset-password" page={BlogResetPasswordPage} name="resetPassword" />
+      <Route notfound page={NotFoundPage} />
     </Router>
   )
 }
