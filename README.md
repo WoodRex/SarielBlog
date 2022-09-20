@@ -1,4 +1,4 @@
-## RedwoodJS Simple Blog
+## SarielBlog
 
 ⚠️ Upgraded environment to redwoodJS 3.1
 
