@@ -1,5 +1,5 @@
 ## SarielBlog
-{{ site.description}}
+{{ site.description }}
 
 ⚠️ Upgraded environment to redwoodJS 3.1
 
