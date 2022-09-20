@@ -1,8 +1,3 @@
----
-layout: default
-title: SarielBlog
----
-
 ## SarielBlog
 
 ⚠️ Upgraded environment to redwoodJS 3.1
